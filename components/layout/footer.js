@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
-    // elevation: 2,
+    elevation: 2,
   },
   text: {
     color: '#F6F1F1',
