@@ -85,11 +85,11 @@ const ResearcherSpeciesRequests = ({ navigation }) => {
         ))}
 
         {/* Add New Species Request Button */}
-        <TouchableOpacity 
-          style={styles.addButton} 
-           // <- Fixed navigation
+        <TouchableOpacity
+          style={styles.addButton}
+          onPress={() => navigation.navigate('AddSpeciesRequest')}
         >
-          <Text style={styles.addButtonText}>Add New Species Request</Text>
+          <Text style={styles.addButtonText}>+ Add New Request</Text>
         </TouchableOpacity>
       </ScrollView>
     </Layout>

@@ -7,6 +7,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import researcherDashboard from '../screens/researcherDashboard';
 import researcherSpeciesRequests from '../screens/researcherSpeciesRequests';
 import addSpeciesRequest from '../screens/addSpeciesRequest';
+import SearchSpecies from '../screens/SearchSpecies';
+import SpeciesReports from '../screens/SpeciesReports';
 
 const Tab = createBottomTabNavigator();
 
@@ -97,8 +99,8 @@ export default function BottomTabs() {
     >
       <Tab.Screen name="Home" component={researcherDashboard} />
       <Tab.Screen name="Requests" component={researcherSpeciesRequests} />
-      <Tab.Screen name="Search" children={() => <DummyScreen name="Search" />} />
-      <Tab.Screen name="Reports" component={addSpeciesRequest} />
+      <Tab.Screen name="Search" component={SearchSpecies} />
+      <Tab.Screen name="Reports" component={SpeciesReports} />
       <Tab.Screen name="Favorites" children={() => <DummyScreen name="Favorites" />} />
     </Tab.Navigator>
   );
