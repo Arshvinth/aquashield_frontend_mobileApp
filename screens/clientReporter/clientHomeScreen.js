@@ -1,11 +1,29 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Text, View, StyleSheet } from 'react-native'
+import RecentData from '../../components/ui/RecentData';
 
 export default function ClientHomeScreen() {
     return (
-        <View style={{ flex: 1, justifyContent: "Center", alignItems: "center" }}>
-            <Text>Client Reporter Home Screen</Text>
+        <View style={styles.container}>
+            <Text style={styles.title}>Client Reporter Home Screen</Text>
+
+            {/* Render the Recent Reports Table */}
+            <RecentData />
         </View>
     );
-    npx
-}
+
+};
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        padding: 16,
+        backgroundColor: "#fff",
+    },
+    title: {
+        fontSize: 18,
+        fontWeight: "bold",
+        marginBottom: 10,
+        textAlign: "center"
+    }
+});

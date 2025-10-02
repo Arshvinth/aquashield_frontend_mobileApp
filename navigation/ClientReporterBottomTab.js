@@ -42,6 +42,7 @@ export default function ClientBottom() {
                 tabBarActiveTintColor: "#146C94",
                 tabBarInactiveTintColor: "#19A7CE",
                 tabBarShowLabel: false,
+
             }}
         >
             <Tab.Screen
@@ -49,13 +50,13 @@ export default function ClientBottom() {
                 component={MyReport}
                 options={{
                     tabBarIcon: ({ focused }) => (
-                        <View style={{ alignItems: "center", justifyContent: "center", top: 10 }}>
+                        <View style={{ width: 120, alignItems: "center", justifyContent: "center", top: 10 }}>
                             <Ionicons
                                 name={focused ? "folder" : "folder-open-outline"}
                                 size={24}
                                 color={focused ? "#146C94" : "#19A7CE"}
                             />
-                            <Text style={{ color: focused ? "#146C94" : "#19A7CE", fontSize: 10 }}>
+                            <Text style={{ color: focused ? "#146C94" : "#19A7CE", fontSize: 10, fontWeight: focused ? "bold" : "normal", }}>
                                 My Report
                             </Text>
                         </View>
@@ -67,13 +68,13 @@ export default function ClientBottom() {
                 component={ClientReportIncident}
                 options={{
                     tabBarIcon: ({ focused }) => (
-                        <View style={{ alignItems: "center", justifyContent: "center", top: 10 }}>
+                        <View style={{ width: 120, alignItems: "center", justifyContent: "center", top: 10 }}>
                             <Ionicons
                                 name={focused ? "flag" : "flag-outline"}
                                 size={24}
                                 color={focused ? "#146C94" : "#19A7CE"}
                             />
-                            <Text style={{ color: focused ? "#146C94" : "#19A7CE", fontSize: 10 }}>
+                            <Text style={{ color: focused ? "#146C94" : "#19A7CE", fontSize: 10, fontWeight: focused ? "bold" : "normal" }}>
                                 Report
                             </Text>
                         </View>
@@ -98,13 +99,14 @@ export default function ClientBottom() {
                 component={Notification}
                 options={{
                     tabBarIcon: ({ focused }) => (
-                        <View style={{ alignItems: "center", justifyContent: "center", top: 10 }}>
+                        <View style={{ width: 120, alignItems: "center", justifyContent: "center", top: 10 }}>
                             <Ionicons
                                 name={focused ? "notifications" : "notifications-outline"}
                                 size={24}
                                 color={focused ? "#146C94" : "#19A7CE"}
+
                             />
-                            <Text style={{ color: focused ? "#146C94" : "#19A7CE", fontSize: 10 }} >
+                            <Text style={{ color: focused ? "#146C94" : "#19A7CE", fontSize: 10, fontWeight: focused ? "bold" : "normal" }} >
                                 Notify
                             </Text>
                         </View>
@@ -116,13 +118,13 @@ export default function ClientBottom() {
                 component={ClientProfile}
                 options={{
                     tabBarIcon: ({ focused }) => (
-                        <View style={{ alignItems: "center", justifyContent: "center", top: 10 }}>
+                        <View style={{ width: 120, alignItems: "center", justifyContent: "center", top: 10 }}>
                             <Ionicons
                                 name={focused ? "person" : "person-outline"}
                                 size={24}
                                 color={focused ? "#146C94" : "#19A7CE"}
                             />
-                            <Text style={{ color: focused ? "#146C94" : "#19A7CE", fontSize: 10 }}>
+                            <Text style={{ color: focused ? "#146C94" : "#19A7CE", fontSize: 10, fontWeight: focused ? "bold" : "normal" }}>
                                 Profile
                             </Text>
                         </View>
