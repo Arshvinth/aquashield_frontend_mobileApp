@@ -3,14 +3,14 @@ import { View, Text, StyleSheet, FlatList } from 'react-native';
 
 const reports = [
     { id: "R-8", date: "2025-09-01", location: "Kollupitiya", status: "Pending" },
-    { id: "R-6", date: "2025-08-31", location: "Kollupitiya", status: "Pending" },
-    { id: "R-6", date: "2025-08-31", location: "Kollupitiya", status: "Verified" },
-    { id: "R-6", date: "2025-08-31", location: "Kollupitiya", status: "Reject" },
+    { id: "R-5", date: "2025-08-31", location: "Kollupitiya", status: "Pending" },
+    { id: "R-4", date: "2025-08-31", location: "Kollupitiya", status: "Verified" },
+    { id: "R-3", date: "2025-08-31", location: "Kollupitiya", status: "Reject" },
 ];
 export default function RecentData() {
 
-    const renderRaw = ({ item }) => (
-        <View style={styles.row}>
+    const renderRaw = ({ item, index }) => (
+        <View key={item.id} style={styles.row}>
             <Text style={styles.cell}>{item.id}</Text>
             <Text style={styles.cell}>{item.date}</Text>
             <Text style={styles.cell}>{item.location}</Text>
@@ -28,11 +28,13 @@ export default function RecentData() {
                 <Text style={[styles.cell, styles.header]}>Status</Text>
             </View>
 
-            <FlatList
-                data={reports}
-                renderItem={renderRaw}
-                keyExtractor={(item, index) => index.toString()}
-            />
+            {reports.map((item, index) => renderRaw({ item, index }))}
+
+            {reports.length === 0 && (
+                <View style={styles.emptyState}>
+                    <Text style={styles.emptyText}>No recent reports</Text>
+                </View>
+            )}
 
         </View>
     );
@@ -64,9 +66,11 @@ const styles = StyleSheet.create({
     container: {
         marginTop: 10,
         borderWidth: 1,
-        borderColor: "#ccc",
+        backgroundColor: "#ffffff",
+        borderColor: "#19A7CE",
         borderRadius: 8,
         overflow: "hidden",
+        marginBottom: 20
     },
     row: {
         flexDirection: "row",

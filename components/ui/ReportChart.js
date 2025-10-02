@@ -40,13 +40,20 @@ export default function ReportChart() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#FFFFFF"
+        backgroundColor: "#FFFFFF",
+        borderColor: "#19A7CE",
+        borderWidth: 1,
+        borderRadius: 15,
+        paddingRight: 20,
     },
     heading: {
         fontSize: 18,
         fontWeight: "bold",
         textAlign: "left",
-        color: "#146C94"
+        color: "#146C94",
+        margin: 2,
+        marginLeft: 10,
+        marginTop: 20
     },
     chartContainer: {
         paddingVertical: 2,

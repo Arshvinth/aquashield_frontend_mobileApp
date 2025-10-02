@@ -5,10 +5,12 @@ import MyReport from "../screens/clientReporter/myReport";
 import Notification from "../screens/clientReporter/Notification";
 import ClientProfile from "../screens/clientReporter/ClientProfile";
 import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
+
+const profileImage = require('../assets/profile.jpg');
 
 const CustomTabBarButton = ({ children, onPress }) => (
     <TouchableOpacity
@@ -33,6 +35,23 @@ const CustomTabBarButton = ({ children, onPress }) => (
             {children}
         </View>
     </TouchableOpacity>
+);
+
+const CustomHeader = ({ title, showProfile = true }) => (
+    <View style={styles.headerContainer}>
+        <Text style={styles.headerTitle}>
+            {title}
+
+        </Text>
+        {showProfile && (
+            <TouchableOpacity style={styles.profileButton}>
+                <Image
+                    source={profileImage}
+                    style={styles.profileImages}
+                />
+            </TouchableOpacity>
+        )}
+    </View>
 );
 
 export default function ClientBottom() {
@@ -62,6 +81,7 @@ export default function ClientBottom() {
                             </Text>
                         </View>
                     ),
+                    header: (props) => <CustomHeader title="My Reports" {...props} />
                 }}
             />
             <Tab.Screen
@@ -80,6 +100,7 @@ export default function ClientBottom() {
                             </Text>
                         </View>
                     ),
+                    header: (props) => <CustomHeader title="Reports" {...props} />
                 }}
             />
             <Tab.Screen
@@ -92,6 +113,7 @@ export default function ClientBottom() {
                         </View>
 
                     ),
+                    header: (props) => <CustomHeader title="Home" {...props} />,
                     tabBarButton: (props) => <CustomTabBarButton {...props} />,
                 }}
             />
@@ -112,6 +134,7 @@ export default function ClientBottom() {
                             </Text>
                         </View>
                     ),
+                    header: (props) => <CustomHeader title="Notification" {...props} />
                 }}
             />
             <Tab.Screen
@@ -130,6 +153,7 @@ export default function ClientBottom() {
                             </Text>
                         </View>
                     ),
+                    header: (props) => <CustomHeader title="My Profile" {...props} />
                 }}
             />
         </Tab.Navigator>
@@ -147,4 +171,33 @@ const styles = StyleSheet.create({
         shadowRadius: 3.5,
         elevation: 5,
     },
+    headerContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: '100%',
+        marginTop: 40,
+        paddingHorizontal: 10,
+        backgroundColor: "#FFFFFF",
+    },
+    headerTitle: {
+        color: "#146C94",
+        fontSize: 24,
+        fontWeight: "bold",
+        textAlign: "left",
+        marginLeft: 10,
+        flex: 1,
+
+
+    },
+    profileButton: {
+        padding: 5,
+    },
+    profileImages: {
+        width: 35,
+        height: 35,
+        borderRadius: 17.5,
+        borderWidth: 2,
+        borderColor: '#FFFFFF',
+    }
 });

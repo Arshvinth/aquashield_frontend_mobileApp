@@ -1,16 +1,42 @@
 import React from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import { Text, View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native'
 import RecentData from '../../components/ui/RecentData';
 import ReportChart from '../../components/ui/ReportChart';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function ClientHomeScreen() {
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Client Reporter Home Screen</Text>
+        <ScrollView style={styles.container}>
 
-            <ReportChart />
-            <RecentData />
-        </View>
+            <View style={styles.row}>
+                <TouchableOpacity style={styles.card}>
+                    <Ionicons
+                        name="flag"
+                        size={25}
+                        color={"#ffffff"}
+                        style={styles.cardIcon} />
+                    <Text style={styles.cardText}>
+                        Report Illegal Action
+                    </Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.card}>
+                    <Ionicons
+                        name="search"
+                        size={25}
+                        color={"#ffffff"}
+                        style={styles.cardIcon} />
+
+                    <Text style={styles.cardText}>
+                        Cheack Species DB
+                    </Text>
+                </TouchableOpacity>
+            </View>
+            <View >
+
+                <ReportChart />
+                <RecentData />
+            </View>
+        </ScrollView>
     );
 
 };
@@ -19,12 +45,40 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 16,
-        backgroundColor: "#fff",
+        backgroundColor: "#F6F1F1",
+
     },
     title: {
         fontSize: 18,
         fontWeight: "bold",
         marginBottom: 10,
         textAlign: "center"
+    },
+    row: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginTop: 10,
+        marginBottom: 20,
+        padding: 10,
+    },
+    card: {
+        flex: 1,
+        backgroundColor: "#146C94",
+        padding: 10,
+        margin: 5,
+        borderRadius: 10,
+        alignItems: "center"
+    },
+    cardText: {
+        color: "#ffffff",
+        fontWeight: "bold",
+        textAlign: "center"
+    },
+    cardIcon: {
+        alignItems: "center"
     }
+
+
+
 });
