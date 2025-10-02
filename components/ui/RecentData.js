@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 5,
         borderBottomWidth: 1,
-        borderBottomColor: "#eee",
+        borderBottomColor: "#19A7CE",
         alignItems: "center",
     },
     headerRow: {
@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
         flex: 1,
         textAlign: "center",
         fontSize: 14,
+        color: "#146C94",
     },
     header: {
         fontWeight: "bold",

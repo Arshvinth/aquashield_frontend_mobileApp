@@ -38,6 +38,7 @@ const CustomTabBarButton = ({ children, onPress }) => (
 export default function ClientBottom() {
     return (
         <Tab.Navigator
+            initialRouteName="Home"
             screenOptions={{
                 tabBarActiveTintColor: "#146C94",
                 tabBarInactiveTintColor: "#19A7CE",
