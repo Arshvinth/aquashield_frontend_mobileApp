@@ -100,7 +100,7 @@ export default function ClientBottom() {
                             </Text>
                         </View>
                     ),
-                    header: (props) => <CustomHeader title="Reports" {...props} />
+                    header: (props) => <CustomHeader title="Report Incident" {...props} />
                 }}
             />
             <Tab.Screen
